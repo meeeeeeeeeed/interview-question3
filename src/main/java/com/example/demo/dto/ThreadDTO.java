@@ -6,6 +6,9 @@ import lombok.Data;
 import javax.validation.constraints.NotNull;
 import java.util.List;
 
+/**
+ * ThreadDTO class, holds information about question and associated replies.
+ */
 @Data
 @Builder
 public class ThreadDTO {

@@ -5,6 +5,9 @@ import lombok.Data;
 
 import javax.validation.constraints.NotNull;
 
+/**
+ * ReplyDTO class, holds information about reply and Id of associated question
+ */
 @Data
 @Builder
 public class ReplyDTO {

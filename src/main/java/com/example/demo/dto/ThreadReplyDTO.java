@@ -2,10 +2,14 @@ package com.example.demo.dto;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
 
 import javax.validation.constraints.NotNull;
 
-@Data
+/**
+ * ThreadReplyDTO class, holds information about reply. It is not pointing to related question.
+ */
+@Getter
 @Builder
 public class ThreadReplyDTO {
 

@@ -5,6 +5,9 @@ import lombok.Data;
 
 import javax.validation.constraints.NotNull;
 
+/**
+ * Question DTO class, holds information about question
+ */
 @Data
 @Builder
 public class QuestionDTO {
