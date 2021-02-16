@@ -1,7 +1,7 @@
 Forum API
 ==================
 
-##Description
+## Description
 This is simple Spring Boot Application, mimics forum behavior. Api allows to create new question,
 replay to given question and display all stored questions in form of thread. 
 It uses inmemory database so there is no persistence. Always starts with clean database.
@@ -10,7 +10,7 @@ It uses inmemory database so there is no persistence. Always starts with clean d
 * Project use java 1.8 and maven
 * To build project execute `mvn clean install`
 * To run application execute `mvn spring-boot:run`
-* Application is configured to use port:5000
+* Application is configured to run on port:5000
 * Application is using inmemory database
 
 ## Documentation
