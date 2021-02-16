@@ -1,24 +1,29 @@
-Interview question
+Forum API
 ==================
 
+* Project use java 1.8 and maven
+* To build project execute `mvn clean install`
+* To run application execute `mvn spring-boot:run`
+* Application is configured to use port:5000
+* Application is using inmemory database
 
-This is a very basic spring-boot app. Run it (using `mvn spring-boot:run`) or your favorite IDE.
-Try the url `http://localhost:5000/greeting?name=David`, it should return the string: "Hello David".
+# API Description
 
-You should use this template to develop a forum system.
-
-# Requirements
-We want to develop 4 APIs:
+Application exposes 4 endpoints:
 
 ### Post new question: `http://localhost:5000/questions`
-with body:
+
+Example request body:
+
 ```json
 {
   "author": "Daniel",
   "message": "Message text"
 }
 ```
-Response should be 201:
+
+Example Response 201 CREATED:
+
 ```json
 {
   "id": 1,
@@ -29,14 +34,18 @@ Response should be 201:
 ```
 
 ### Post a reply to a message: `http://localhost:5000/questions/{questionId}/reply`
-with body:
+
+Example request body:
+
 ```json
 {
   "author": "Reply author",
   "message": "Message reply text"
 }
 ```
-Response should be 201:
+
+Example Response 201 CREATED:
+
 ```json
 {
   "questionId": 1,
@@ -46,8 +55,10 @@ Response should be 201:
 }
 ```
 
-### Get a thread: `http://localhost:5000/questions/{questionId}`, 
-the response should look like:
+### Get a thread: `http://localhost:5000/questions/{questionId}`,
+
+Example response:
+
 ```json
 {
   "id": 1,
@@ -55,9 +66,9 @@ the response should look like:
   "message": "Message text",
   "replies": [
     {
-       "id": 5,
-       "author": "Reply author",
-       "message": "Message reply text"
+      "id": 5,
+      "author": "Reply author",
+      "message": "Message reply text"
     },
     ...
   ]
@@ -65,31 +76,17 @@ the response should look like:
 ```
 
 ### Get a list of questions: `http://localhost:5000/questions`
-The response should look like:
+
+Example response:
+
 ```json
 [
-    {
-      "id": 1,
-      "author": "Daniel",
-      "message": "Message text",     
-      "replies": 0
-    },
-    ...
+  {
+    "id": 1,
+    "author": "Daniel",
+    "message": "Message text",
+    "replies": 0
+  },
+  ...
 ]
 ```
-
-## Guidelines
-* Fork this repository and push your commits
-* Use the spring-boot template given
-* Write unit-tests, integration-tests 
-  * Write in javadocs what scenarios are in test
-  * Higher coverage is better
-* Write code documentation
-* All classes given are meant to used as reference - once they are not needed, they can be removed.
-* This project uses [lombok](https://projectlombok.org/) - use it when possible
-* Properly organize your project with `.gitignore` file, `readme` file explaining how to run the project, etc.
-
-## Deliverables
-* Send us a link to a repository fulfilling the requirements.
-* Your code will be tested using different tests.
-* Successful implementation will move to interview.
