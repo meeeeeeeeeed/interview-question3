@@ -67,19 +67,6 @@ class QuestionControllerTest {
 
     /**
      * test for GET /guestions
-     * When service throws exception then controller should return 500 HTTP status
-     *
-     * @throws Exception
-     */
-    @Test
-    void shouldReturn500InternalServerError_whenServiceThrowsRuntimeError() throws Exception {
-        when(questionService.getAllQuestions()).thenThrow(new RuntimeException());
-        mockMvc.perform(get("/questions"))
-                .andExpect(status().isInternalServerError());
-    }
-
-    /**
-     * test for GET /guestions
      * When there are Questions in repository then endpoint should return list of QuestionDTO and 200 OK HTTP status
      *
      * @throws Exception
