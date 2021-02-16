@@ -1,5 +1,11 @@
 package com.example.demo.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -11,8 +17,12 @@ import java.util.List;
 /**
  * Question class, represents a database entity.
  */
+@Getter
+@Builder
 @Entity
-@Table(name = "QUESTION")
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "question")
 public class Question {
 
     @Id
@@ -25,6 +35,6 @@ public class Question {
     @Column(nullable = false)
     private String message;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "question")
     private List<Reply> replies;
 }

@@ -1,6 +1,10 @@
 package com.example.demo.entity;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,19 +16,23 @@ import javax.persistence.Table;
 /**
  * Replay class, represents a database entity.
  */
-@Data
+@Getter
+@Setter
+@Builder
 @Entity
-@Table(name = "REPLY")
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "reply")
 public class Reply {
 
     @Id
     @GeneratedValue
     private Long id;
 
-    @Column
+    @Column(nullable = false)
     private String author;
 
-    @Column
+    @Column(nullable = false)
     private String message;
 
     @ManyToOne
