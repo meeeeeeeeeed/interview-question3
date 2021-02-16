@@ -3,6 +3,7 @@ package com.example.demo.dto;
 import lombok.Builder;
 import lombok.Getter;
 
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -15,7 +16,9 @@ public class ReplyDTO {
     private final Long questionId;
     private final Long id;
     @NotNull
+    @NotBlank
     private final String author;
     @NotNull
+    @NotBlank
     private final String message;
 }
