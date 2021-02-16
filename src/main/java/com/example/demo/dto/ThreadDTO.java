@@ -1,7 +1,7 @@
 package com.example.demo.dto;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 
 import javax.validation.constraints.NotNull;
 import java.util.List;
@@ -9,15 +9,15 @@ import java.util.List;
 /**
  * ThreadDTO class, holds information about question and associated replies.
  */
-@Data
+@Getter
 @Builder
 public class ThreadDTO {
 
-    private Long id;
+    private final Long id;
     @NotNull
-    private String author;
+    private final String author;
     @NotNull
-    private String message;
+    private final String message;
 
-    private List<ThreadReplyDTO> replies;
+    private final List<ThreadReplyDTO> replies;
 }

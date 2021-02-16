@@ -1,7 +1,6 @@
 package com.example.demo.dto;
 
 import lombok.Builder;
-import lombok.Data;
 import lombok.Getter;
 
 import javax.validation.constraints.NotNull;
@@ -13,9 +12,9 @@ import javax.validation.constraints.NotNull;
 @Builder
 public class ThreadReplyDTO {
 
-    private Long id;
+    private final Long id;
     @NotNull
-    private String author;
+    private final String author;
     @NotNull
-    private String message;
+    private final String message;
 }

@@ -1,23 +1,23 @@
 package com.example.demo.dto;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 
 import javax.validation.constraints.NotNull;
 
 /**
  * Question DTO class, holds information about question
  */
-@Data
+@Getter
 @Builder
 public class QuestionDTO {
 
-    private Long id;
+    private final Long id;
     @NotNull
-    private String author;
+    private final String author;
     @NotNull
-    private String message;
+    private final String message;
 
-    private int replies;
+    private final int replies;
 }
 

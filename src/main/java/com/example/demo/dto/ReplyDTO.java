@@ -1,21 +1,21 @@
 package com.example.demo.dto;
 
 import lombok.Builder;
-import lombok.Data;
+import lombok.Getter;
 
 import javax.validation.constraints.NotNull;
 
 /**
  * ReplyDTO class, holds information about reply and Id of associated question
  */
-@Data
+@Getter
 @Builder
 public class ReplyDTO {
 
-    private Long questionId;
-    private Long id;
+    private final Long questionId;
+    private final Long id;
     @NotNull
-    private String author;
+    private final String author;
     @NotNull
-    private String message;
+    private final String message;
 }
