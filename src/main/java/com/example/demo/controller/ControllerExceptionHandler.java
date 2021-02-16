@@ -5,7 +5,6 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
@@ -28,27 +27,4 @@ public class ControllerExceptionHandler {
         return new ResponseEntity<>(ex.getMessage(), new HttpHeaders(), HttpStatus.NOT_FOUND);
     }
 
-    /**
-     * Wrap {@link org.springframework.web.bind.MethodArgumentNotValidException} class exception to 400 HTTP Status - BAD_REQUEST
-     *
-     * @param ex MethodArgumentNotValidException
-     * @return responseEntity
-     */
-    @ExceptionHandler(MethodArgumentNotValidException.class)
-    public ResponseEntity<String> handleMethodArgumentNotValidException(MethodArgumentNotValidException ex) {
-        log.debug(ex.getMessage());
-        return new ResponseEntity<>(null, new HttpHeaders(), HttpStatus.BAD_REQUEST);
-    }
-
-    /**
-     * Wrap {@link Exception} class exception to 500 HTTP Status - INTERNAL_SERVER_ERROR
-     *
-     * @param ex QuestionNotFoundException
-     * @return responseEntity
-     */
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleOtherExceptions(Exception ex) {
-        log.error(ex.getMessage());
-        return new ResponseEntity<>(null, new HttpHeaders(), HttpStatus.INTERNAL_SERVER_ERROR);
-    }
 }
