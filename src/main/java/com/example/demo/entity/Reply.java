@@ -22,7 +22,7 @@ import javax.persistence.Table;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "reply")
+@Table(name = "REPLIES")
 public class Reply {
 
     @Id
